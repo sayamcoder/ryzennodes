@@ -1,0 +1,62 @@
+/* Unique Styles for RyzenNodes About Us page */
+
+.about-hero {
+    padding: 8rem 0 4rem 0;
+    text-align: center;
+}
+
+.about-hero h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.04em;
+    color: var(--text-pure);
+}
+
+.lead-text {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.25rem;
+    line-height: 1.7;
+    color: var(--text-dim);
+}
+
+.values-section {
+    padding-bottom: 8rem;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.about-card {
+    position: relative;
+    border-radius: 12px;
+    background: var(--card-bg);
+    border: 1px solid var(--border-subtle);
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.about-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--border-hover);
+}
+
+.about-card .card-content {
+    padding: 3rem 2.5rem;
+}
+
+.about-card h3 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+
+@media (max-width: 992px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+}

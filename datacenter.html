@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Network & Datacenters — RyzenNodes</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="datacenter.css">
+    
+    <!-- Google Fonts: DM Sans & Space Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+    <div class="space-mesh"></div>
+    <div class="ambient-glow glow-orange"></div>
+
+    <!-- Glassmorphic Header -->
+    <header class="navbar">
+        <div class="container navbar-inner">
+            <a href="index.html" class="logo">
+                <span class="logo-mark"></span>
+                <span class="logo-text">RYZEN<span class="dim">NODES</span></span>
+            </a>
+            <nav class="nav-links">
+                <a href="index.html#vps-builder">VPS Builder</a>
+                <a href="index.html#pricing">VPS Plans</a>
+                <a href="datacenter.html">Datacenters</a>
+                <a href="about-us.html">About Us</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            <div class="nav-actions">
+                <a href="#" class="btn-status"><span class="pulse"></span> Network: Active</a>
+                <a href="#" class="btn btn-secondary">Node Console</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Interactive Speed Test Arena -->
+    <section class="datacenter-hero">
+        <div class="container">
+            <div class="section-title-wrap text-center">
+                <span class="sup-title">NETWORK LOOKING GLASS</span>
+                <h1>Global Speed Diagnostics</h1>
+                <p class="datacenter-desc">Run latency sweeps and simulated file downloads directly from your local terminal to our physical racks.</p>
+            </div>
+
+            <!-- Interactive Speed Diagnostic Box -->
+            <div class="tester-card spotlight-card">
+                <div class="card-border-beam"></div>
+                <div class="card-content tester-inner">
+                    <div class="tester-controls">
+                        <h3>Run Test Engine</h3>
+                        <p class="input-sub">Choose a target cluster to measure connection latency values:</p>
+                        
+                        <div class="location-selectors">
+                            <label class="loc-option">
+                                <input type="radio" name="locTest" value="Mumbai" checked>
+                                <div class="loc-box">
+                                    <span class="flag-dot in"></span>
+                                    <span>Mumbai, India</span>
+                                </div>
+                            </label>
+
+                            <label class="loc-option">
+                                <input type="radio" name="locTest" value="Singapore">
+                                <div class="loc-box">
+                                    <span class="flag-dot sg"></span>
+                                    <span>Singapore, SG</span>
+                                </div>
+                            </label>
+
+                            <label class="loc-option">
+                                <input type="radio" name="locTest" value="Frankfurt">
+                                <div class="loc-box">
+                                    <span class="flag-dot de"></span>
+                                    <span>Frankfurt, Germany</span>
+                                </div>
+                            </label>
+                        </div>
+
+                        <button class="btn btn-primary btn-block" id="startTestBtn">Run Performance Sweep</button>
+                    </div>
+
+                    <!-- Output Stats Area -->
+                    <div class="tester-console">
+                        <div class="stats-grid">
+                            <div class="stat-box">
+                                <span class="stat-lbl">LATENCY PING</span>
+                                <span class="stat-val" id="diagPing">-- ms</span>
+                            </div>
+                            <div class="stat-box">
+                                <span class="stat-lbl">BANDWIDTH SPEED</span>
+                                <span class="stat-val" id="diagBw">-- Mbps</span>
+                            </div>
+                        </div>
+
+                        <!-- Progress Bar Container -->
+                        <div class="progress-container">
+                            <div class="progress-bar" id="diagBar"></div>
+                        </div>
+                        <span class="console-log" id="diagLog">Network looking glass online. Select node.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Deep Minimalistic Footer -->
+    <footer class="footer">
+        <div class="container footer-inner">
+            <div class="footer-meta">
+                <a href="#" class="logo">
+                    <span class="logo-mark"></span>
+                    <span class="logo-text">RYZEN<span class="dim">NODES</span></span>
+                </a>
+                <p>Industry-disrupting VPS hosting infrastructures constructed with extreme processing performance in mind.</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-group">
+                    <h5>SERVICES</h5>
+                    <a href="index.html#pricing">General VPS</a>
+                    <a href="index.html#vps-builder">Custom Builder</a>
+                    <a href="datacenter.html">Global Speed Test</a>
+                </div>
+                <div class="footer-group">
+                    <h5>COMPANY</h5>
+                    <a href="about-us.html">About Us</a>
+                    <a href="contact.html">Contact Us</a>
+                </div>
+            </div>
+        </div>
+        <div class="container copyright-line">
+            <p>&copy; 2026 RyzenNodes Inc. All performance statistics guaranteed via KVM SLAs.</p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+    <script src="script.js"></script>
+    
+    <!-- Local Speed Test Script Engine -->
+    <script>
+        const startBtn = document.getElementById("startTestBtn");
+        const diagPing = document.getElementById("diagPing");
+        const diagBw = document.getElementById("diagBw");
+        const diagBar = document.getElementById("diagBar");
+        const diagLog = document.getElementById("diagLog");
+
+        const nodes = {
+            Mumbai: { ping: 14, speed: 4120 },
+            Singapore: { ping: 22, speed: 3890 },
+            Frankfurt: { ping: 110, speed: 2150 }
+        };
+
+        startBtn.addEventListener("click", () => {
+            const selection = document.querySelector('input[name="locTest"]:checked').value;
+            const target = nodes[selection];
+
+            startBtn.disabled = true;
+            diagPing.textContent = "-- ms";
+            diagBw.textContent = "-- Mbps";
+            diagBar.style.width = "0%";
+            diagLog.textContent = `Connecting to ${selection} Looking Glass...`;
+
+            // Progress cycle simulator
+            setTimeout(() => {
+                diagLog.textContent = `Injecting raw ping cycles to ${selection}...`;
+                diagPing.textContent = `${target.ping} ms`;
+                diagBar.style.width = "40%";
+
+                setTimeout(() => {
+                    diagLog.textContent = `Simulating 100MB target file download block...`;
+                    diagBar.style.width = "80%";
+
+                    setTimeout(() => {
+                        diagLog.textContent = `Sweep finalized. Data streams operational.`;
+                        diagBw.textContent = `${target.speed} Mbps`;
+                        diagBar.style.width = "100%";
+                        startBtn.disabled = false;
+                    }, 1200);
+                }, 1000);
+            }, 800);
+        });
+    </script>
+</body>
+</html>

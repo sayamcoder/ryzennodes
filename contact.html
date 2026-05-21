@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us — RyzenNodes</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="contact.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+    <div class="space-mesh"></div>
+    <div class="ambient-glow glow-amber"></div>
+
+    <header class="navbar">
+        <div class="container navbar-inner">
+            <a href="index.html" class="logo">
+                <span class="logo-mark"></span>
+                <span class="logo-text">RYZEN<span class="dim">NODES</span></span>
+            </a>
+            <nav class="nav-links">
+                <a href="index.html#vps-builder">VPS Builder</a>
+                <a href="index.html#pricing">VPS Plans</a>
+                <a href="about-us.html">About Us</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            <div class="nav-actions">
+                <a href="#" class="btn-status"><span class="pulse"></span> Network: Active</a>
+                <a href="#" class="btn btn-secondary">Node Console</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-header">
+                <span class="sup-title">CONNECT WITH US</span>
+                <h1>How can we assist you?</h1>
+                <p>Have custom architecture needs or need technical support? Drop us a message and our technical engineers will assist you.</p>
+            </div>
+
+            <div class="contact-grid">
+                <!-- Info block -->
+                <div class="contact-info">
+                    <div class="info-item spotlight-card">
+                        <div class="card-border-beam"></div>
+                        <div class="card-content">
+                            <i data-lucide="mail" class="info-icon"></i>
+                            <div>
+                                <h4>Support Center</h4>
+                                <p>support@ryzennodes.com</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-item spotlight-card">
+                        <div class="card-border-beam"></div>
+                        <div class="card-content">
+                            <i data-lucide="message-square" class="info-icon"></i>
+                            <div>
+                                <h4>Community Discord</h4>
+                                <p>discord.gg/ryzennodes</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form block -->
+                <div class="contact-form-wrapper spotlight-card">
+                    <div class="card-border-beam"></div>
+                    <form class="card-content contact-form" onsubmit="event.preventDefault(); alert('Message Received. Our staff will respond shortly.');">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" placeholder="John Doe" required autocomplete="off">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" placeholder="john@example.com" required autocomplete="off">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" rows="5" placeholder="Details about your requirements or questions..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer-inner">
+            <div class="footer-meta">
+                <a href="#" class="logo">
+                    <span class="logo-mark"></span>
+                    <span class="logo-text">RYZEN<span class="dim">NODES</span></span>
+                </a>
+                <p>Industry-disrupting VPS hosting infrastructures constructed with extreme processing performance in mind.</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-group">
+                    <h5>SERVICES</h5>
+                    <a href="index.html#pricing">General VPS</a>
+                    <a href="index.html#vps-builder">Custom Builder</a>
+                </div>
+                <div class="footer-group">
+                    <h5>COMPANY</h5>
+                    <a href="about-us.html">About Us</a>
+                    <a href="contact.html">Contact Us</a>
+                </div>
+            </div>
+        </div>
+        <div class="container copyright-line">
+            <p>&copy; 2026 RyzenNodes Inc. All performance statistics guaranteed via KVM SLAs.</p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
