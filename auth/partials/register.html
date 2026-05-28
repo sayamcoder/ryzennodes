@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | RyzenNodes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../auth.css">
+</head>
+<body>
+
+    <main class="auth-window">
+        <!-- Left Side Form Column -->
+        <section class="auth-form-side">
+            <div class="auth-header-wrapper">
+                <a href="../../index.html" class="brand-link">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 24px; height:24px;">
+                        <path d="M2 12L12 2L22 12L12 22L2 12Z" fill="#111"/>
+                        <circle cx="12" cy="12" r="3" fill="#fff"/>
+                    </svg>
+                    <span>RyzenNodes</span>
+                </a>
+            </div>
+
+            <div class="auth-center-form">
+                <h2>Create Account</h2>
+                <p class="subtitle">Deploy your first VPS in less than two minutes.</p>
+
+                <form id="auth-action-form">
+                    <!-- Bot Mitigation Honeypot -->
+                    <div style="display:none; visibility:hidden;">
+                        <input type="text" id="auth_user_middle_name" name="auth_user_middle_name" autocomplete="off">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <div class="input-wrapper">
+                            <input type="text" id="name" placeholder="Alex Carter" required autocomplete="name">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <div class="input-wrapper">
+                            <input type="email" id="email" placeholder="support@ryzennodes.com" required autocomplete="email">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <div class="input-wrapper">
+                            <input type="password" id="password" placeholder="••••••••" required autocomplete="new-password">
+                            <span class="toggle-password">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                                    <circle cx="12" cy="12" r="3"/>
+                                </svg>
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Captcha Widget Insertion -->
+                    <div id="captcha-injection-box"></div>
+
+                    <div class="form-options">
+                        <label class="checkbox-label">
+                            <input type="checkbox" required> I agree to the <a href="../../partials/terms.html" class="forgot-link">Terms of Service</a>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn-auth-submit">Create Account</button>
+                </form>
+
+                <div class="social-separator">Or Register With</div>
+
+                <div class="social-buttons">
+                    <button class="social-btn">
+                        <img src="https://www.google.com/favicon.ico" width="16" height="16" alt="Google"> Google
+                    </button>
+                    <button class="social-btn">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 4.17c.66-.81 1.11-1.93.99-3.06-1 .04-2.22.67-2.94 1.51-.63.73-1.18 1.87-1.03 2.98 1.12.09 2.27-.61 2.98-1.43z"/>
+                        </svg> Apple
+                    </button>
+                </div>
+
+                <div class="switch-auth-link">
+                    Already have an account? <a href="login.html">Log In</a>
+                </div>
+            </div>
+
+            <div class="auth-footer">
+                <span>Copyright © 2026 RyzenNodes.</span>
+                <a href="../../partials/privacy.html" style="text-decoration: underline;">Privacy Policy</a>
+            </div>
+        </section>
+
+        <!-- Right Illustrative Panel -->
+        <aside class="auth-illustrative-side">
+            <div class="illus-content">
+                <h3>Effortlessly manage your team and operations.</h3>
+                <p>Register to instantly access our custom management console, API environments, and priority support.</p>
+            </div>
+
+            <!-- Built with pure CSS inside auth.css -->
+            <div class="illus-mockup-wrapper">
+                <div class="mockup-frame">
+                    <div class="mockup-card span-2">
+                        <h4>Instance Deployment Status</h4>
+                        <table class="mockup-table">
+                            <thead>
+                                <tr style="border-bottom: 2px solid #f0f0f0; text-align: left; font-weight: 600;">
+                                    <th style="padding-bottom: 6px;">Instance</th>
+                                    <th style="padding-bottom: 6px;">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Noida-EPYC-01</td>
+                                    <td><span class="mockup-badge">Running</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Mumbai-RYZ-04</td>
+                                    <td><span class="mockup-badge">Running</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Delhi-XEON-12</td>
+                                    <td><span class="mockup-badge" style="background:#fff3bf; color:#f08c00;">Provisioning</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </main>
+
+    <!-- Support JS Scripts -->
+    <script src="../../scripts/botchecker.js"></script>
+    <script src="../../scripts/captcha.js"></script>
+    <script src="../auth.js"></script>
+</body>
+</html>

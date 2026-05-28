@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Announcements | RyzenNodes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        /* Announcements specific styles */
+        .announcements-feed {
+            max-width: 800px;
+            margin: 0 auto 100px;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .announcement-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 40px;
+            border: 1px solid var(--border-light);
+            position: relative;
+            transition: transform 0.2s ease;
+        }
+
+        .announcement-card:hover {
+            transform: translateY(-2px);
+        }
+
+        .announcement-meta {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            font-size: 0.85rem;
+        }
+
+        .announcement-date {
+            color: var(--text-gray);
+            font-weight: 500;
+        }
+
+        /* Status & Promo Badges */
+        .badge {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .badge-promo { background-color: #fef3c7; color: #d97706; }
+        .badge-milestone { background-color: #dbeafe; color: #2563eb; }
+        .badge-resolved { background-color: #d1fae5; color: #059669; }
+        .badge-archived { background-color: #f3f4f6; color: #9ca3af; }
+
+        .announcement-content h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+            line-height: 1.3;
+        }
+
+        .announcement-content p {
+            font-size: 1rem;
+            color: var(--text-gray);
+            margin-bottom: 16px;
+            white-space: pre-line; /* Preserves single line breaks */
+        }
+
+        /* Discord Style Markdown Translators */
+        .mention {
+            background-color: rgba(43, 52, 242, 0.1);
+            color: #2b34f2;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            display: inline-block;
+        }
+
+        .quote-block {
+            border-left: 4px solid var(--text-main);
+            background: rgba(0, 0, 0, 0.02);
+            padding: 16px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .quote-block ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .quote-block li {
+            font-size: 0.95rem;
+            color: var(--text-main);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .quote-block li::before {
+            content: "•";
+            font-weight: bold;
+        }
+
+        /* Strikethrough style for archived service updates */
+        .strikethrough-announcement {
+            opacity: 0.6;
+        }
+
+        .strikethrough-announcement .announcement-content h2 {
+            text-decoration: line-through;
+            color: var(--text-gray);
+        }
+
+        .strikethrough-announcement .announcement-content p {
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container navbar">
+            <a href="../index.html" class="logo">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2 12L12 2L22 12L12 22L2 12Z" fill="#111"/>
+                    <circle cx="12" cy="12" r="3" fill="#fff"/>
+                </svg>
+                RyzenNodes
+            </a>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../index.html#plans">VPS Plans</a></li>
+                <li><a href="announcements.html">Announcements</a></li>
+                <li><a href="status.html">Status</a></li>
+            </ul>
+            <!-- Session Profile / Auth Links -->
+            <div id="auth-buttons-container" style="display: flex; gap: 12px; align-items: center;">
+                <a href="../auth/partials/login.html" class="btn btn-outline" style="padding: 8px 20px; font-size: 0.9rem;">Log In</a>
+                <a href="../auth/partials/register.html" class="btn btn-black" style="padding: 8px 20px; font-size: 0.9rem;">Register</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container fade-up">
+        <div class="page-header">
+            <h1>Announcements</h1>
+            <p>Stay updated with our community milestones, promotional offers, and system maintenance reports.</p>
+        </div>
+
+        <div class="announcements-feed">
+
+            <!-- Announcement 1: Eid al-Adha Special -->
+            <article class="announcement-card">
+                <div class="announcement-meta">
+                    <span class="badge badge-promo">Special Offer</span>
+                    <span class="announcement-date">May 2026</span>
+                </div>
+                <div class="announcement-content">
+                    <h2>🌙 Happy Eid al-Adha / Eid Qurbani Mubarak to all our users, friends, resellers, and community members from Team RyzenNodes ❤️</h2>
+                    <p>Hey <span class="mention">@everyone</span>,
+
+                    May this Eid bring happiness, peace, and success to everyone and their families.</p>
+                    
+                    <div class="quote-block">
+                        <strong>🎉 Eid Special Offer:</strong>
+                        <ul>
+                            <li>20% OFF on all VPS / VDS / Dedicated Server plans</li>
+                            <li>Valid for New Customers only</li>
+                            <li>Offer valid for the next 3 days only</li>
+                        </ul>
+                    </div>
+                    
+                    <p>We appreciate your patience and understanding during the holiday period.
+
+                    Regards,
+                    Team RyzenNodes</p>
+                </div>
+            </article>
+
+            <!-- Announcement 2: 100 Members Milestone -->
+            <article class="announcement-card">
+                <div class="announcement-meta">
+                    <span class="badge badge-milestone">Milestone</span>
+                    <span class="announcement-date">May 2026</span>
+                </div>
+                <div class="announcement-content">
+                    <h2>✨ 100 Members Milestone! ✨</h2>
+                    <p>We have officially reached 100 members!
+
+                    Thank you to everyone who has joined and helped build this space. Your presence and contributions are what make this server active and welcoming.
+
+                    Here’s to many more milestones ahead! 🥂
+
+                    <span class="mention">@everyone</span></p>
+                </div>
+            </article>
+
+            <!-- Announcement 3: Intel V4 Nodes Resolved -->
+            <article class="announcement-card">
+                <div class="announcement-meta">
+                    <span class="badge badge-resolved">Resolved</span>
+                    <span class="announcement-date">April 2026</span>
+                </div>
+                <div class="announcement-content">
+                    <h2>📢 Intel V4 Nodes Status Update</h2>
+                    <p><span class="mention">@everyone</span>
+
+                    The issue on our Intel Xeon V4 infrastructure has now been fully resolved and all V4 nodes are stable again.
+
+                    All affected services should now be operating normally.
+
+                    If your server is still offline, kindly power it off and boot it back from the control panel.
+
+                    Thank you for your patience and understanding during the maintenance period.
+
+                    Regards,
+                    Team RyzenNodes</p>
+                </div>
+            </article>
+
+            <!-- Announcement 4: Intel V4 Service Issue (Strikethrough / Archive) -->
+            <article class="announcement-card strikethrough-announcement">
+                <div class="announcement-meta">
+                    <span class="badge badge-archived">Archived Log</span>
+                    <span class="announcement-date">April 2026</span>
+                </div>
+                <div class="announcement-content">
+                    <h2>📢 Intel V4 Services Update</h2>
+                    <p><span class="mention">@everyone</span>
+
+                    We have identified an unexpected issue on our Intel Xeon V4 infrastructure.
+
+                    One of the storage disks (SSD3) became full and unstable, which may cause temporary performance issues, outages, or slow response on some V4 series services.
+
+                    Our team is currently shifting affected server data to another storage disk to stabilize the node and restore normal performance.
+
+                    ⏱ Estimated ETA: 5 Minutes
+
+                    We sincerely apologize for the inconvenience caused during the last 25 minutes. If your current VPS/VDS is hosted on a V4 series node, kindly remain patient while our team works on resolving the issue.
+
+                    Regards,
+                    Team RyzenNodes</p>
+                </div>
+            </article>
+
+        </div>
+    </div>
+
+    <!-- Global Footer -->
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <h4>RyzenNodes</h4>
+                <p style="color: var(--text-gray); font-size: 0.95rem;">Pure performance. Zero bloat.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Products</h4>
+                <ul>
+                    <li><a href="../index.html#plans">General Series</a></li>
+                    <li><a href="../index.html#plans">Platinum Series</a></li>
+                    <li><a href="../index.html#plans">Premium Ryzen 9</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="../index.html#about">About Us</a></li>
+                    <li><a href="status.html">System Status</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
+                    <li><a href="aup.html">Acceptable Use</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container copyright" style="margin-top: 40px; border-top: 1px solid var(--border-light); padding-top: 20px;">
+            Copyright © 2026 RyzenNodes Enterprises LTD.
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>

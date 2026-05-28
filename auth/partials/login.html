@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In | RyzenNodes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../auth.css">
+</head>
+<body>
+
+    <main class="auth-window">
+        <!-- Left Side Form Column -->
+        <section class="auth-form-side">
+            <div class="auth-header-wrapper">
+                <a href="../../index.html" class="brand-link">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 24px; height:24px;">
+                        <path d="M2 12L12 2L22 12L12 22L2 12Z" fill="#111"/>
+                        <circle cx="12" cy="12" r="3" fill="#fff"/>
+                    </svg>
+                    <span>RyzenNodes</span>
+                </a>
+            </div>
+
+            <div class="auth-center-form">
+                <h2>Welcome Back</h2>
+                <p class="subtitle">Enter your email and password to access your account.</p>
+
+                <form id="auth-action-form">
+                    <!-- Bot Mitigation Honeypot -->
+                    <div style="display:none; visibility:hidden;">
+                        <input type="text" id="auth_user_middle_name" name="auth_user_middle_name" autocomplete="off">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <div class="input-wrapper">
+                            <input type="email" id="email" placeholder="support@ryzennodes.com" required autocomplete="email">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <div class="input-wrapper">
+                            <input type="password" id="password" placeholder="••••••••" required autocomplete="current-password">
+                            <span class="toggle-password">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                                    <circle cx="12" cy="12" r="3"/>
+                                </svg>
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Captcha Widget Insertion -->
+                    <div id="captcha-injection-box"></div>
+
+                    <div class="form-options">
+                        <label class="checkbox-label">
+                            <input type="checkbox"> Remember Me
+                        </label>
+                        <a href="#" class="forgot-link">Forgot Password?</a>
+                    </div>
+
+                    <button type="submit" class="btn-auth-submit">Log In</button>
+                </form>
+
+                <div class="social-separator">Or Login With</div>
+
+                <div class="social-buttons">
+                    <button class="social-btn">
+                        <img src="https://www.google.com/favicon.ico" width="16" height="16" alt="Google"> Google
+                    </button>
+                    <button class="social-btn">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 4.17c.66-.81 1.11-1.93.99-3.06-1 .04-2.22.67-2.94 1.51-.63.73-1.18 1.87-1.03 2.98 1.12.09 2.27-.61 2.98-1.43z"/>
+                        </svg> Apple
+                    </button>
+                </div>
+
+                <div class="switch-auth-link">
+                    Don't have an account? <a href="register.html">Register Now</a>
+                </div>
+            </div>
+
+            <div class="auth-footer">
+                <span>Copyright © 2026 RyzenNodes.</span>
+                <a href="../../partials/privacy.html" style="text-decoration: underline;">Privacy Policy</a>
+            </div>
+        </section>
+
+        <!-- Right Illustrative Panel -->
+        <aside class="auth-illustrative-side">
+            <div class="illus-content">
+                <h3>Effortlessly manage your team and operations.</h3>
+                <p>Log in to access your dashboard, scale resources, and deploy high-performance nodes in seconds.</p>
+            </div>
+
+            <!-- Built with pure CSS inside auth.css -->
+            <div class="illus-mockup-wrapper">
+                <div class="mockup-frame">
+                    <div class="mockup-card">
+                        <h4>Total Nodes</h4>
+                        <div class="metric">12 / 16</div>
+                    </div>
+                    <div class="mockup-card">
+                        <h4>Cpu Load</h4>
+                        <div class="metric" style="color: var(--success);">22%</div>
+                    </div>
+                    <div class="mockup-card span-2">
+                        <h4>Uptime performance</h4>
+                        <div class="metric">100.0%</div>
+                        <div class="mockup-graph">
+                            <svg viewBox="0 0 100 20" width="100%" height="100%" preserveAspectRatio="none">
+                                <path d="M0,15 Q25,2 50,12 T100,2" fill="none" stroke="var(--auth-accent-color)" stroke-width="3"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </main>
+
+    <!-- Support JS Scripts -->
+    <script src="../../scripts/botchecker.js"></script>
+    <script src="../../scripts/captcha.js"></script>
+    <script src="../auth.js"></script>
+</body>
+</html>

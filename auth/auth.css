@@ -1,0 +1,351 @@
+/* Auth Layout Rules */
+:root {
+    --auth-bg-color: #ffffff;
+    --auth-accent-color: #2b34f2;
+    --text-main: #111111;
+    --text-gray: #666666;
+    --border-light: #e5e5e5;
+    --success: #10b981;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f3f4f6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.auth-window {
+    width: 100%;
+    max-width: 1280px;
+    background: #ffffff;
+    border-radius: 24px;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.03);
+    overflow: hidden;
+    margin: 20px;
+    min-height: 800px;
+}
+
+/* Left Form Section */
+.auth-form-side {
+    padding: 60px 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.auth-header-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-main);
+    text-decoration: none;
+}
+
+.auth-center-form {
+    max-width: 420px;
+    width: 100%;
+    margin: auto;
+    padding: 40px 0;
+}
+
+.auth-center-form h2 {
+    font-size: 2.25rem;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.auth-center-form p.subtitle {
+    font-size: 0.95rem;
+    color: var(--text-gray);
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-main);
+    margin-bottom: 8px;
+}
+
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-wrapper input {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid var(--border-light);
+    border-radius: 12px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.input-wrapper input:focus {
+    border-color: var(--auth-accent-color);
+}
+
+.toggle-password {
+    position: absolute;
+    right: 16px;
+    cursor: pointer;
+    color: var(--text-gray);
+    display: flex;
+    align-items: center;
+}
+
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.875rem;
+    margin-bottom: 24px;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    color: var(--text-gray);
+}
+
+.checkbox-label input {
+    accent-color: var(--auth-accent-color);
+    width: 16px;
+    height: 16px;
+}
+
+.forgot-link {
+    color: var(--auth-accent-color);
+    font-weight: 500;
+}
+
+.btn-auth-submit {
+    width: 100%;
+    background: var(--auth-accent-color);
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.btn-auth-submit:hover {
+    opacity: 0.95;
+}
+
+/* Social Separator */
+.social-separator {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 24px 0;
+    color: var(--text-gray);
+    font-size: 0.8rem;
+}
+
+.social-separator::before, .social-separator::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.social-separator::before { margin-right: .75em; }
+.social-separator::after { margin-left: .75em; }
+
+/* Social Buttons */
+.social-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.social-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px;
+    border: 1px solid var(--border-light);
+    border-radius: 12px;
+    background: #fafafa;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+.social-btn:hover {
+    background-color: #f1f1f1;
+}
+
+.switch-auth-link {
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--text-gray);
+}
+
+.switch-auth-link a {
+    color: var(--auth-accent-color);
+    font-weight: 600;
+}
+
+.auth-footer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: var(--text-gray);
+}
+
+/* Right Illustration Section */
+.auth-illustrative-side {
+    background: var(--auth-accent-color);
+    margin: 16px;
+    border-radius: 20px;
+    padding: 60px 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: #ffffff;
+    position: relative;
+    overflow: hidden;
+}
+
+.illus-content h3 {
+    font-size: 2.25rem;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.03em;
+    margin-bottom: 12px;
+}
+
+.illus-content p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.05rem;
+}
+
+/* Decorative UI Dashboard Mockup in CSS */
+.illus-mockup-wrapper {
+    flex-grow: 1;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    margin-top: 40px;
+    position: relative;
+    min-height: 380px;
+}
+
+.mockup-frame {
+    width: 100%;
+    max-width: 440px;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 16px;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+}
+
+.mockup-card {
+    background: #ffffff;
+    color: var(--text-main);
+    padding: 16px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.mockup-card.span-2 {
+    grid-column: span 2;
+}
+
+.mockup-card h4 {
+    font-size: 0.75rem;
+    color: var(--text-gray);
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.mockup-card .metric {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+/* Illustrative SVG bar/line graph */
+.mockup-graph {
+    width: 100%;
+    height: 40px;
+    margin-top: 10px;
+}
+
+.mockup-table {
+    width: 100%;
+    margin-top: 8px;
+    font-size: 0.75rem;
+    border-collapse: collapse;
+}
+
+.mockup-table tr {
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.mockup-table td {
+    padding: 6px 0;
+}
+
+.mockup-badge {
+    padding: 2px 6px;
+    border-radius: 4px;
+    background: #e6fcf5;
+    color: #0ca678;
+    font-weight: 600;
+}
+
+@media (max-width: 1024px) {
+    .auth-window {
+        grid-template-columns: 1fr;
+    }
+    .auth-illustrative-side {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .auth-form-side {
+        padding: 40px 24px;
+    }
+}
